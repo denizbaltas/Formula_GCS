@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 def plot_track(ax, x_raw, y_raw, x_s, y_s, s, kappa, R, apex_idx):
     """
-    Track Map (Top View) çizimi:
+    Track Map (Top View) cizimi:
     - x_raw, y_raw -> ham pist (scatter)
-    - x_s, y_s     -> spline edilmiþ pist (line)
-    - apex_idx     -> viraj tepe noktalarý (marker)
+    - x_s, y_s     -> spline edilmis pist (line)
+    - apex_idx     -> viraj tepe noktalari (marker)
     """
 
 
