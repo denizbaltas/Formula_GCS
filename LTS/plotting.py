@@ -13,10 +13,10 @@ def plot_track(ax, x_raw, y_raw, x_s, y_s, s, kappa, R, apex_idx):
     #Ham pist (scatter)
     plt.scatter(x_raw, y_raw, color='blue', s=40, label='Raw Track')
 
-    #Spline edilmiþ pist (line)
+    #Spline edilmis pist (line)
     ax.plot(x_s, y_s, color='HotPink', linewidth=2, label='Spline Track')
 
-    #Apex noktalarý
+    #Apex noktalari
     ax.scatter(
         x_s[apex_idx],
         y_s[apex_idx],
@@ -29,7 +29,7 @@ def plot_track(ax, x_raw, y_raw, x_s, y_s, s, kappa, R, apex_idx):
     ax.set_title("Track Map (Top View)")
     ax.set_xlabel("X [m]")
     ax.set_ylabel("Y [m]")
-    ax.axis('equal')     # Pist ölçeði bozulmasýn
+    ax.axis('equal')     # Pist olcegi bozulmasin
     ax.grid(True)
     ax.legend()
 
