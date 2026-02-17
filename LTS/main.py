@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-from plot_ui import Ui_MainWindow   # dosya adýn plot_ui.py ise
+from plot_ui import Ui_MainWindow   
 from plotting import plot_track, plot_curvature_heatmap
 
 
