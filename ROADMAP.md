@@ -30,17 +30,18 @@
 
 ---
 
-## Faz 3 — Backend Canlı Bağlantı
+## Faz 3 — Simulation Altyapısı & Veri Akışı
 
-**Amaç:** Simulation yerine gerçek veri kaynağına bağlanma.
+**Amaç:** Backend'den frontend'e veri akışını simülasyon ile uçtan uca çalıştırmak.
 
-| Adım | Açıklama |
-|---|---|
-| Serial entegrasyonu | `serial_source.py` → gerçek UART protokolüyle test |
-| Telemetry parser | `telemetry_parser.py` → araç firmware paket formatına göre güncelleme |
-| `config.py` geçişi | `DataMode.SERIAL` seçilince gerçek veriye geçiş |
-| Thread yapısı | `QThread` ile arka planda veri okuma |
-| Veri loglama | Gelen her paketi CSV / SQLite'a kaydetme |
+| Adım | Dosya / Modül | Açıklama |
+|---|---|---|
+| DataMode switch | `config.py` | `SIMULATION` mode aktifken `SimulationSource` otomatik seçilsin |
+| Data Pipeline | `backend/data_pipeline.py` | `QThread` ile `SimulationSource.read()` → parse → `TelemetryData` → Qt Signal yayını |
+| TelemetryData timestamp | `backend/models/telemetry_data.py` | Her pakete `timestamp: float` alanı eklenmesi |
+| Veri loglama (CSV) | `backend/logger/csv_logger.py` | Gelen her `TelemetryData` paketini zaman damgalı CSV'ye kaydetme |
+| Replay Source | `backend/data_sources/replay_source.py` | Kayıtlı CSV log dosyasını satır satır okuyup `DataSource` gibi yayımlama |
+| DataMode.REPLAY | `config.py` | Yeni mod: `REPLAY` — dosya yolunu belirt, kaydı tekrar oynat |
 
 ---
 
@@ -56,7 +57,20 @@
 
 ---
 
-## Faz 5 — İleri Özellikler
+## Faz 5 — Backend Canlı Bağlantı
+
+**Amaç:** Simulation yerine gerçek veri kaynağına bağlanma.
+
+| Adım | Açıklama |
+|---|---|
+| Serial entegrasyonu | `serial_source.py` → gerçek UART protokolüyle test |
+| Telemetry parser | `telemetry_parser.py` → araç firmware paket formatına göre güncelleme |
+| `config.py` geçişi | `DataMode.SERIAL` seçilince gerçek veriye geçiş |
+| Thread yapısı | `QThread` ile arka planda veri okuma |
+
+---
+
+## Faz 6 — İleri Özellikler
 
 | Özellik | Açıklama |
 |---|---|
