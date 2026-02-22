@@ -64,4 +64,4 @@
 | Komut Gönderme | GCS → Araç yönünde komut (kalibrasyon, mod değişikliği) |
 | Replay Mode | Kayıtlı log dosyasını tekrar oynatma |
 | Çoklu Araç | Birden fazla araçtan eş zamanlı veri |
-| Plugin Sistemi | Yeni sayfa/component eklemeyi kolaylaştırma |
+| Plugin Sistemi | Yeni sayfa/component eklemeyi kolaylaştırma 
