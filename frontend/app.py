@@ -11,13 +11,13 @@ from PyQt6.QtCore import Qt
 
 from frontend.dashboard.dashboard_page import DashboardPage
 from frontend.telemetry.telemetry_page import TelemetryPage
-from frontend.track.track_page import TrackPage
+from frontend.lts.lts_page import LTSPage
 
 
 class App(QMainWindow):
     """GCS Ana Penceresi — sayfa yönetimi ve navigasyon."""
 
-    PAGE_NAMES = ["Dashboard", "Telemetry", "Track"]
+    PAGE_NAMES = ["Dashboard", "Telemetry", "LTS"]
 
     def __init__(self):
         super().__init__()
@@ -48,7 +48,7 @@ class App(QMainWindow):
 
         self.dashboard_page = DashboardPage()
         self.telemetry_page = TelemetryPage()
-        self.track_page = TrackPage()
+        self.track_page = LTSPage()
 
         self._stack.addWidget(self.dashboard_page)   # index 0
         self._stack.addWidget(self.telemetry_page)    # index 1

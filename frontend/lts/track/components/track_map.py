@@ -1,6 +1,5 @@
 """
 Track Map component.
-LTS/plotting.py → plot_track fonksiyonundan taşındı.
 Pist haritasını (top view) çizer.
 """
 import numpy as np
