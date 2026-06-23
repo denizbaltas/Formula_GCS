@@ -1,6 +1,5 @@
 """
 Curvature Heatmap component.
-LTS/plotting.py → plot_curvature_heatmap fonksiyonundan taşındı.
 Eğrilik (curvature) haritasını çizer.
 """
 import numpy as np
